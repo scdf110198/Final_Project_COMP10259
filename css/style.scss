@@ -1,0 +1,350 @@
+/* Designing overall page*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+
+@keyframes dolphinColor {
+	0% {color: blue}
+    25% {color: rgb(114, 232, 253)}
+    50% {color: rgb(26, 236, 72)}
+    75% {color: rgb(179, 116, 203)}
+    100% {color: blue;}
+}
+/* SASS variables */
+$menuColorYellow: yellow;
+$menuHoverColor: white;
+$buttonColor: red;
+/*Setting Up CSS Box Model*/
+*{
+	box-sizing: border-box;
+	margin:0;
+}
+
+/*Setting Up Body*/
+body{
+  margin:0;
+  line-height: 1.5;
+  background-color: #b6b4b3;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+ }
+
+/*Designing Container Classes*/
+.container{
+    max-width: 1170px;
+    margin:auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+
+/* Designing Header */
+.header{
+	left:0;
+	top:0;
+	width: 100%;
+	z-index:99;
+	transition: all 0.5s ease;
+}
+
+.header.fixed{
+	background-color: #ffffff;
+	position: fixed;
+}
+.header .fish-name{
+	padding:0 15px;
+}
+.header .fish-name a{
+	text-decoration: none;
+	font-size: 30px;
+	color:$menuColorYellow;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing:2px;
+	transition: all 0.5s ease;
+	animation-name: dolphinColor;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+.header.fixed .fish-name a{
+	color:#000000;
+}
+
+
+.header .nav-toggle{
+	width: 40px;
+	height: 34px;
+	border:1px solid #ffffff;
+	border-radius: 3px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease;
+	display: none;
+}
+.header.fixed .nav-toggle{
+   border-color: #000000;
+}
+.header .nav-toggle span{
+	height: 1px;
+	display: block;
+	width: 16px;
+	background-color: #ffffff;
+	position: relative;
+	transition: all 0.5s ease;
+}
+.header .nav-toggle span:before,
+.header .nav-toggle span:after{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	height: 1px;
+	width: 100%;
+	background-color: #ffffff;
+	transition: all 0.5s ease;
+}
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after{
+  background-color: #000000;
+}
+.header .nav-toggle span:before{
+	transform:translateY(-6px);
+}
+.header .nav-toggle span:after{
+	transform:translateY(6px);
+}
+
+.header .nav{
+	padding: 0 60px;
+}
+.header .nav ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.header .nav ul li{
+	display: inline-block;
+	margin-left: 30px;
+}
+.header .nav ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	color:$menuColorYellow;
+	padding:25px 0;
+	display: block;
+	transition: all 0.5s ease;
+}
+.header.fixed .nav ul li a{
+  color:#000000;
+}
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover{
+	color: $menuHoverColor;
+}
+
+/* Designing Home section */
+.home-section{
+    min-height: 100vh;
+    background-image: url('../img/dolphin-jumping-kp.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    padding:0 15px;
+}
+#home-text{
+	text-align: center;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 30px;
+	padding-top: 15%;
+	flex: content;
+	opacity: .8;
+}
+
+/* Designing About section */
+.about-section{
+	padding:80px 0 0;
+	display: flex;
+    flex-wrap: wrap;
+}
+#aboutMeDolphin{
+	margin-top: 5%;
+	height: 50%; 
+	width: 30%;
+	float: left;
+	padding-right: 15px;
+	
+}
+#about{
+	padding-left: 29%;
+}
+
+#about-me{
+	font-size: 30px;
+}
+
+#about-content{
+	margin-top: 5%;
+	font-size: 20px;
+	padding-right: 35%;
+	text-align: justify;
+}
+
+
+
+/* Designing Prey & Predators Section */
+
+.predators-section{
+	padding:80px 0 0;
+	display: flex;
+    flex-wrap: wrap;
+}
+#predators{
+	padding-left: 29%;
+}
+#preyPredator{
+	font-size: 30px;
+}
+#preyPredator-content{
+	margin-top: 5%;
+	font-size: 20px;
+	padding-right: 35%;
+	text-align: justify;
+}
+#preyPredator h1{
+	padding-right: 35%;
+}
+
+/* Designing Food Section */
+
+.gallery-section{
+	background-image: url("../img/water.jpg");
+	background-size: auto;
+	background-attachment: fixed;
+	margin-top: 10%;
+	background-color: black;
+	padding:80px 0 0;
+
+}
+
+#gallery-content{
+	color: #fbff00;
+	font-size: 30px;
+	text-align: center;
+}
+
+.gallery-section div img{
+	padding: 30px 30px;
+	margin-left: 10px;
+	margin-bottom: -45px;
+}
+figcaption {
+	margin-top: 0;
+    font: italic smaller sans-serif;
+	font-size: small;
+    padding: 3px;
+    text-align: center;
+}
+
+#vid1 video{
+	width: 50%;
+	margin-bottom: -12px
+}
+#vid2 video{
+	margin-top: 30px;
+	width: 50%;
+	margin-bottom: -12px
+}
+
+/* Slideshow */
+#slideshow {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+.slide {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Designing World Count Section */
+.count-section{
+	padding:80px 0 50px;
+	background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url("../img/repeatingDolphin.jpg");
+	background-size: auto;
+	background-attachment: fixed;
+	background-size: 15%;
+}
+#count-content{
+	margin-top: 5%;
+	font-size: 50px;
+	padding-right: 27%;
+	padding-left: 29%;
+	text-align: center;
+}
+#count-content h1{
+	text-align: center;
+}
+#count-content table{
+	margin-left: 30%;
+}
+table,tr,td,th{
+	margin-top: 10%;
+	font-size: 83%;
+	border: 1px solid black;
+	text-align: center;
+}
+#table-content{
+	width: 200%;
+	margin-left: -53%;
+}
+/* Designing Honesty Declaration */
+.honesty {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.honesty ul {
+    list-style: none;
+}
+
+.honesty ol {
+    list-style: none;
+}
+
+.honesty a {
+    color:teal;
+}
+
+/* SASS for buttons */
+#btnSubmit{
+	background-color: $buttonColor;
+	&::after{
+		content: "Submit";
+		text-transform: uppercase;
+	}
+}
+#btnStopSlideshow{
+	background-color: $buttonColor;
+	&::after{
+		content: "Open/Close";
+		text-transform: uppercase;
+	}
+}
+/* CSS for Copyright */
+

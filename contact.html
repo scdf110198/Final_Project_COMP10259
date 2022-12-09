@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/contactstyle.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".header").css("position", "fixed");
+		});
+	</script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="fish-name">
+                    <!-- Write your species name under the anchor tag -->
+                    <a href="index.html">Dolphin</a>
+                </div>
+         <div class="nav-toggle">
+           <span></span>
+         </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#predators">Prey & Predators</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#count">World Count</a></li>
+                        <li><a href="honesty.html">Honesty Declaration</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <form action="https://formspree.io/f/mrgdnpvp" method="POST" id="contact" onsubmit=" return validate()">
+    <h1>Contact Us</h1>
+        <div class="contactContent">
+            <!-- First name -->
+            <div id="firstnameContent">
+                <label for="firstname">First Name:</label>
+                <input type="text" name="firstname" id="firstname" required>
+            </div>
+            <br>
+            <br>
+            <!-- Last name -->
+            <div id="lastnameContent">
+                <label for="lastname">Last Name:</label>
+                <input type="text" name="lastname" id="lastname" required>
+                <p></p>
+            </div>
+            <br>
+            <br>
+            <!-- Email -->
+            <div id="emailContent">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required>
+                <p></p>
+            </div>
+            <br>
+            <br>
+            <!-- Date -->
+            <div id="dateContent">
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date" required>
+                <p></p>
+            </div>
+            <br>
+            <br>
+            <!-- Phone -->
+            <div id="phoneContent">
+                <label for="phone">Phone:</label>
+                <input type="text" name="phone" id="phone" required>
+                <p></p>
+            </div>
+            <br>
+            <br>
+            <!-- Message -->
+            <div id="messageContent">
+                <label for="message">Message:</label>
+                <br>
+                <textarea name="message" id="message" cols="49" rows="10"></textarea>
+                <p></p>
+            </div>
+            <br>
+            
+            <!-- Submit button -->
+            
+            <Button id="btnSubmit" onsubmit="return validate()"></Button>
+            
+        </div>
+    </form>
+    <script>
+        
+        function validate(){
+            let errors=[];
+            let fname = document.getElementById("firstname").value;
+            let lname = document.getElementById("lastname").value;
+            let emailValue = document.getElementById("email").value;
+            let phonenumber = document.getElementById("phone").value;
+            let messagevalue = document.getElementById("message").value;
+            let regex = /^\S+@\S+\.\S+$/;
+            let hasNumber = /\d/;
+            if (fname.length < 5){
+                errors.push("Enter first name at least 5 characters");
+                
+            } 
+            if (hasNumber.test(fname)) {
+                errors.push("Enter a first name without numbers");
+                
+            }
+            if (lname.length < 5){
+                errors.push("Enter last name at least 5 characters");
+                
+            }
+            if (hasNumber.test(lname)) {
+                errors.push("Enter a last name without numbers");
+                
+            }
+            if(!regex.test(emailValue)){
+                errors.push("Enter a valid Email");
+                
+            }
+            if(phonenumber.length != 10 || phonenumber.length > 10 || phonenumber < 0){
+                errors.push("Enter a number with a length of 10 or non-negative digits");
+                
+            }
+            if(messagevalue.length < 50){
+                errors.push("Enter a message at least 50 alphabets")
+                
+            }
+
+            if(errors.length != 0){
+                alert("Please correct the follow errors:\n" + errors.join(", \n"));
+                return false;
+            } else {
+                return true;
+            }
+       
+        }
+    </script>
+</body>
+</html>

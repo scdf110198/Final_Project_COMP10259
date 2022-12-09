@@ -1,0 +1,99 @@
+@keyframes contactContent {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
+
+body{
+    background-image: url('../img/dolphin-jumping-kp.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#contact{
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+    text-align: center;
+    max-width: 50%;
+    margin:auto;
+    margin-top: 6%;
+    padding: 5%;
+    border: 1px solid #b6b4b3;
+    border-radius: 50px;
+    animation-name: contactContent;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+
+#contact h1{
+    margin-bottom: 30px;
+}
+
+#firstnameContent{
+    max-width: 50%;
+    margin: auto;
+}
+.contactContent #firstnameContent label{
+    float: left;
+}
+.contactContent #firstnameContent input{
+    float: right;
+}
+
+
+#lastnameContent{
+    max-width: 50%;
+    margin: auto;
+}
+.contactContent #lastnameContent label{
+    float: left;
+}
+.contactContent #lastnameContent input{
+    float: right;
+}
+
+
+#emailContent{
+    max-width: 50%;
+    margin: auto;
+}
+.contactContent #emailContent label{
+    float: left;
+}
+.contactContent #emailContent input{
+    float: right;
+}
+
+#dateContent{
+    max-width: 50%;
+    margin: auto;
+}
+.contactContent #dateContent label{
+    float: left;
+}
+.contactContent #dateContent input{
+    float: right;
+}
+
+#phoneContent{
+    max-width: 50%;
+    margin: auto;
+}
+.contactContent #phoneContent label{
+    float: left;
+}
+.contactContent #phoneContent input{
+    float: right;
+}
+
+#messageContent{
+    max-width: 50%;
+    margin: auto;
+}
+.contactContent #messageContent label{
+    float: left;
+}
