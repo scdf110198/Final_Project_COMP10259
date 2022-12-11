@@ -399,4 +399,9 @@ table, tr, td, th {
   text-transform: uppercase;
 }
 
+/* Overwriting contact to have dashed border */
+#contact {
+  border: 5px dashed black;
+}
+
 /* CSS for Copyright *//*# sourceMappingURL=style.css.map */
