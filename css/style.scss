@@ -12,6 +12,7 @@
 $menuColorYellow: yellow;
 $menuHoverColor: white;
 $buttonColor: red;
+$backgroundColor: #b6b4b3;
 /*Setting Up CSS Box Model*/
 *{
 	box-sizing: border-box;
@@ -22,7 +23,7 @@ $buttonColor: red;
 body{
   margin:0;
   line-height: 1.5;
-  background-color: #b6b4b3;
+  background-color: $backgroundColor;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
  }
